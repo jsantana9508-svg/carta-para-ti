@@ -1,0 +1,1097 @@
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+body {
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #46135f 0%,
+            #28083f 45%,
+            #100018 100%
+        );
+
+    color: white;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+
+
+.estrellas {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-image:
+
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+}
+
+
+
+header {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    height: 100px;
+
+    text-align: center;
+
+    padding-top: 15px;
+
+}
+
+
+header h1 {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            38px,
+            8vw,
+            65px
+        );
+
+    color: white;
+
+    text-shadow:
+
+        0 0 5px white,
+
+        0 0 15px #ff8ccf,
+
+        0 0 30px #ff3fa4;
+
+}
+
+
+
+
+main {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    min-height:
+        calc(100vh - 100px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding-top: 30px;
+
+    padding-bottom: 100px;
+
+}
+
+
+
+
+.sobre {
+
+    position: relative;
+
+    width: 420px;
+
+    height: 270px;
+
+    margin-top: 30px;
+
+    perspective: 1000px;
+
+    z-index: 5;
+
+}
+
+
+
+.parte-trasera {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #ff765b;
+
+    border-radius: 6px;
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+
+    z-index: 1;
+
+}
+
+
+
+.carta {
+
+    position: absolute;
+
+    width: 90%;
+
+    height: 92%;
+
+    left: 5%;
+
+    top: 5%;
+
+    background: #fffdf8;
+
+    border-radius: 7px;
+
+    color: #5a304d;
+
+    z-index: 2;
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    transition:
+
+        top 0.9s ease,
+
+        left 0.9s ease,
+
+        transform 0.9s ease,
+
+        width 0.9s ease,
+
+        height 0.9s ease;
+
+}
+
+
+
+
+.contenido-carta {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+}
+
+
+
+
+.contenido-carta::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+.contenido-carta::-webkit-scrollbar-thumb {
+
+    background: #ed8e9c;
+
+    border-radius: 20px;
+
+}
+
+
+
+
+.para {
+
+    display: inline-block;
+
+    padding:
+        5px 12px;
+
+    background:
+        #ffe2dc;
+
+    color: #6a3b50;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.para span {
+
+    color: #e95c73;
+
+    font-weight: bold;
+
+}
+
+
+
+
+.contenido-carta h2 {
+
+    font-size: 29px;
+
+    margin-bottom: 12px;
+
+    color: #5a304d;
+
+}
+
+
+
+.contenido-carta p {
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+
+    color: #5a304d;
+
+}
+
+
+
+
+.firma {
+
+    text-align: right;
+
+    margin-top: 15px;
+
+    padding-bottom: 5px;
+
+    font-size: 24px;
+
+    color: #e95c73;
+
+}
+
+
+/* ==================================================
+   PARTE FRONTAL DEL SOBRE
+================================================== */
+
+.parte-frontal {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 75%;
+
+    background: #ff6952;
+
+    z-index: 4;
+
+    clip-path:
+
+        polygon(
+
+            0 0,
+
+            50% 55%,
+
+            100% 0,
+
+            100% 100%,
+
+            0 100%
+
+        );
+
+}
+
+
+/* ==================================================
+   SOLAPA
+================================================== */
+
+.solapa {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 55%;
+
+    background: #ff826e;
+
+    z-index: 5;
+
+    clip-path:
+
+        polygon(
+
+            0 0,
+
+            100% 0,
+
+            50% 100%
+
+        );
+
+    transform-origin:
+        top center;
+
+    transition:
+
+        transform 0.8s ease,
+
+        z-index 0s
+        linear 0.4s;
+
+}
+
+
+/* ==================================================
+   SELLO
+================================================== */
+
+.sello {
+
+    position: absolute;
+
+    z-index: 6;
+
+    top: 48%;
+
+    left: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #ff4f67;
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 10px
+        rgba(
+            255,
+            70,
+            120,
+            0.8
+        );
+
+    transition:
+
+        opacity 0.3s ease;
+
+}
+
+
+/* ==================================================
+   SOBRE ABIERTO
+================================================== */
+
+.sobre.abierto {
+
+    z-index: 20;
+
+}
+
+
+/* ==================================================
+   ABRIR SOLAPA
+================================================== */
+
+.sobre.abierto .solapa {
+
+    transform:
+        rotateX(180deg);
+
+    z-index: 1;
+
+}
+
+
+/* ==================================================
+   ⭐ CARTA DELANTE DEL SOBRE ⭐
+================================================== */
+
+.sobre.abierto .carta {
+
+    /*
+       La carta se coloca en el centro
+       del sobre.
+    */
+
+    top: 50%;
+
+    left: 50%;
+
+
+    /*
+       La hacemos un poco más grande
+       para poder leerla.
+    */
+
+    width: 95%;
+
+    height: 330px;
+
+
+    /*
+       La centramos.
+    */
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+
+    /*
+       MUY IMPORTANTE:
+
+       z-index 30 significa que
+       la carta queda por delante
+       del sobre.
+    */
+
+    z-index: 30;
+
+}
+
+
+/* ==================================================
+   SELLO DESAPARECE
+================================================== */
+
+.sobre.abierto .sello {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* ==================================================
+   INSTRUCCIÓN
+================================================== */
+
+.instruccion {
+
+    margin-top: 55px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 21px;
+
+    color: #ffd1e9;
+
+    text-align: center;
+
+    text-shadow:
+
+        0 0 8px #ff6bb5;
+
+}
+
+
+/* ==================================================
+   BOTONES
+================================================== */
+
+.botones {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    position: relative;
+
+    z-index: 50;
+
+}
+
+
+.botones button {
+
+    width: 120px;
+
+    padding: 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+/* ==================================================
+   BOTÓN OPEN
+================================================== */
+
+#abrir {
+
+    border: none;
+
+    background: #ff7058;
+
+    color: white;
+
+    box-shadow:
+
+        0 5px 15px
+        rgba(
+            255,
+            100,
+            80,
+            0.3
+        );
+
+}
+
+
+#abrir:hover {
+
+    transform:
+        scale(1.05);
+
+    background: #ff826e;
+
+}
+
+
+/* ==================================================
+   BOTÓN CLOSE
+================================================== */
+
+#cerrar {
+
+    border:
+        2px solid #ff6c85;
+
+    background:
+        transparent;
+
+    color: #ffb6c5;
+
+}
+
+
+#cerrar:hover {
+
+    background:
+        rgba(
+            255,
+            100,
+            130,
+            0.2
+        );
+
+}
+
+
+/* ==================================================
+   CORAZONES
+================================================== */
+
+.corazones {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+}
+
+
+.corazones span {
+
+    position: absolute;
+
+    font-size: 22px;
+
+    filter:
+
+        drop-shadow(
+            0 0 8px #ff4fa3
+        );
+
+    animation:
+
+        flotar 5s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ==================================================
+   POSICIONES DE CORAZONES
+================================================== */
+
+.corazones span:nth-child(1) {
+
+    left: 10%;
+
+    top: 30%;
+
+    animation-delay: 0s;
+
+}
+
+
+.corazones span:nth-child(2) {
+
+    left: 20%;
+
+    top: 70%;
+
+    animation-delay: 1s;
+
+}
+
+
+.corazones span:nth-child(3) {
+
+    left: 80%;
+
+    top: 30%;
+
+    animation-delay: 2s;
+
+}
+
+
+.corazones span:nth-child(4) {
+
+    left: 90%;
+
+    top: 70%;
+
+    animation-delay: 3s;
+
+}
+
+
+.corazones span:nth-child(5) {
+
+    left: 7%;
+
+    top: 55%;
+
+    animation-delay: 1.5s;
+
+}
+
+
+.corazones span:nth-child(6) {
+
+    left: 94%;
+
+    top: 50%;
+
+    animation-delay: 2.5s;
+
+}
+
+
+.corazones span:nth-child(7) {
+
+    left: 15%;
+
+    top: 15%;
+
+    animation-delay: 3s;
+
+}
+
+
+.corazones span:nth-child(8) {
+
+    left: 85%;
+
+    top: 15%;
+
+    animation-delay: 4s;
+
+}
+
+
+/* ==================================================
+   ANIMACIÓN CORAZONES
+================================================== */
+
+@keyframes flotar {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0.4;
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-30px)
+            rotate(15deg);
+
+        opacity: 1;
+
+    }
+
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0.4;
+
+    }
+
+}
+
+
+/* ==================================================
+   📱 CELULAR
+================================================== */
+
+@media (max-width: 600px) {
+
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+
+    /* =============================================
+       TÍTULO
+    ============================================== */
+
+    header {
+
+        height: 80px;
+
+        padding-top: 8px;
+
+    }
+
+
+    header h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    /* =============================================
+       PRINCIPAL
+    ============================================== */
+
+    main {
+
+        min-height: 700px;
+
+        padding-top: 10px;
+
+    }
+
+
+    /* =============================================
+       SOBRE
+    ============================================== */
+
+    .sobre {
+
+        width: 320px;
+
+        height: 205px;
+
+        margin-top: 20px;
+
+    }
+
+
+    /* =============================================
+       CARTA NORMAL
+    ============================================== */
+
+    .carta {
+
+        width: 90%;
+
+        height: 92%;
+
+        left: 5%;
+
+        top: 5%;
+
+    }
+
+
+    /* =============================================
+       ⭐ CARTA ABIERTA EN CELULAR ⭐
+    ============================================== */
+
+    .sobre.abierto .carta {
+
+        /*
+           Se coloca en el centro
+           del sobre.
+        */
+
+        top: 50%;
+
+        left: 50%;
+
+
+        /*
+           Tamaño cómodo para leer.
+        */
+
+        width: 95%;
+
+        height: 300px;
+
+
+        /*
+           Centrar.
+        */
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            );
+
+
+        /*
+           Queda por delante.
+        */
+
+        z-index: 30;
+
+    }
+
+
+    /* =============================================
+       CONTENIDO
+    ============================================== */
+
+    .contenido-carta {
+
+        padding: 14px;
+
+    }
+
+
+    /* =============================================
+       DESTINATARIO
+    ============================================== */
+
+    .para {
+
+        font-size: 15px;
+
+        padding:
+            4px 8px;
+
+        margin-bottom: 6px;
+
+    }
+
+
+    /* =============================================
+       TÍTULO
+    ============================================== */
+
+    .contenido-carta h2 {
+
+        font-size: 22px;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    /* =============================================
+       TEXTO
+    ============================================== */
+
+    .contenido-carta p {
+
+        font-size: 16px;
+
+        line-height: 1.3;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    /* =============================================
+       FIRMA
+    ============================================== */
+
+    .firma {
+
+        font-size: 18px;
+
+        margin-top: 10px;
+
+    }
+
+
+    /* =============================================
+       INSTRUCCIÓN
+    ============================================== */
+
+    .instruccion {
+
+        margin-top: 70px;
+
+        font-size: 17px;
+
+        padding:
+            0 20px;
+
+    }
+
+
+    /* =============================================
+       BOTONES
+    ============================================== */
+
+    .botones {
+
+        margin-top: 15px;
+
+    }
+
+
+    .botones button {
+
+        width: 105px;
+
+        padding: 10px;
+
+    }
+
+}
